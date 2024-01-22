@@ -1,0 +1,62 @@
+:root {
+  font-family: "Noto Sans JP", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+html {
+  color: rgb(231 229 228);
+  background-color: rgb(28 25 23);
+
+  @media (prefers-color-scheme: light) {
+    color: rgb(28 25 23);
+    background-color: rgb(231 229 228);
+  }
+}
+
+a:hover {
+  cursor: pointer;
+}
+
+h1 {
+  font-family: "Darumadrop One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0.05em;
+}
+
+.ud-gothic {
+  font-family: "BIZ UDGothic", sans-serif;
+  font-style: normal;
+}
+
+.skeleton {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(225 224 223);
+
+  background: linear-gradient(
+    102deg,
+    rgb(225 224 223) 25%,
+    rgb(214 211 209) 37%,
+    rgb(225 224 223) 63%
+  );
+  animation: skeletonLoading 1.4s ease infinite;
+  background-size: 400% 100%;
+
+  @media (prefers-color-scheme: dark) {
+    background-color: rgb(31 28 26);
+    background: linear-gradient(102deg, rgb(31 28 26) 25%, rgb(50 47 45) 37%, rgb(31 28 26) 63%);
+    background-size: 400% 100%;
+  }
+}
+
+@keyframes skeletonLoading {
+  from {
+    background-position: 100% 50%;
+  }
+
+  to {
+    background-position: 0 50%;
+  }
+}
