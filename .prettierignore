@@ -1,0 +1,6 @@
+.env
+.DS_Store
+.wrangler
+node_modules
+public/_worker.js
+*.log
