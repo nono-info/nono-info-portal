@@ -1,6 +1,6 @@
-#ののinfo ポータルサイト
+# ののinfo ポータルサイト
 
-##Start
+## Start
 ```txt
 bun install
 bun run dev
