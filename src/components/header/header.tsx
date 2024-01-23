@@ -9,18 +9,20 @@ export const Header = () => {
   return (
     <header class="px-6 pt-6 pb-6 grid place-content-end">
       <div class="absolute">
-        <a href="/">
+        <a href="/" aria-label="Top page">
           <Logo width="105px" />
         </a>
       </div>
-      <div class="flex gap-1 self-center">
-        <HeaderLink href="/events" category={category}>
-          イベント
-        </HeaderLink>
-        <HeaderLink href="/about" category={category}>
-          このサイトについて
-        </HeaderLink>
-      </div>
+      <nav>
+        <ul class="flex gap-1">
+          <HeaderLink href="/events" category={category}>
+            イベント
+          </HeaderLink>
+          <HeaderLink href="/about" category={category}>
+            このサイトについて
+          </HeaderLink>
+        </ul>
+      </nav>
     </header>
   );
 };
@@ -36,15 +38,17 @@ const HeaderLink = (props: HeaderLinkProps) => {
 
   return (
     <>
-      <a
-        class={`
-          px-2.5 py-1.5 rounded-md text-xs ud-gothic font-bold border hover:(bg-stone-300) dark:(text-stone-200 hover:bg-stone-700)
-          ${isActive ? "border-stone-800 dark:border-stone-200" : "border-transparent"}
-        `}
-        href={props.href}
-      >
-        {props.children}
-      </a>
+      <li>
+        <a
+          class={`
+            px-2.5 py-1.5 rounded-md text-xs ud-gothic font-bold border hover:(bg-stone-300) dark:(text-stone-200 hover:bg-stone-700)
+            ${isActive ? "border-stone-800 dark:border-stone-200" : "border-transparent"}
+          `}
+          href={props.href}
+        >
+          {isActive ? <h1 class="inline">{props.children}</h1> : props.children}
+        </a>
+      </li>
     </>
   );
 };
