@@ -9,6 +9,8 @@ const Logo = (props: LogoProps) => {
       xmlns="http://www.w3.org/2000/svg"
       xml:space="preserve"
       style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2"
+      role="img"
+      aria-label="The icon of the website"
       viewBox="0 0 325 209"
       width={props.width || "325"}
     >
