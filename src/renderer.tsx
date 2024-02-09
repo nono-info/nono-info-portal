@@ -25,10 +25,11 @@ export const renderer = jsxRenderer(
       <html lang="ja">
         <head prefix="og: http://ogp.me/ns#">
           <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <link href="/static/style.css" rel="stylesheet" />
-          <script src="https://cdn.twind.style" crossorigin="" />
+          <link href="/static/styles/reset.css" rel="stylesheet" />
+          <link href="/static/styles/style.css" rel="stylesheet" />
+          <link href="/static/styles/uno.css" rel="stylesheet" />
           <link
-            href="https://fonts.googleapis.com/css2?family=BIZ+UDGothic:wght@400;700&display=auto"
+            href="https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@400;500&family=Zen+Antique+Soft&family=BIZ+UDGothic:wght@400;700&display=auto"
             rel="stylesheet"
           />
           {import.meta.env.PROD ? (
