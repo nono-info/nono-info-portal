@@ -7,7 +7,7 @@ export const Header = () => {
   const category = "/" + c.req.path.split("/")[1];
 
   return (
-    <header class="px-6 pt-6 pb-6 grid place-content-end">
+    <header class="grid place-content-end px-6 pb-6 pt-6">
       <div class="absolute">
         <a href="/" aria-label="Top page">
           <Logo width="105px" />
@@ -39,15 +39,21 @@ const HeaderLink = (props: HeaderLinkProps) => {
   return (
     <>
       <li>
-        <a
-          class={`
-            px-2.5 py-1.5 rounded-md text-xs ud-gothic font-bold border hover:(bg-stone-300) dark:(text-stone-200 hover:bg-stone-700)
-            ${isActive ? "border-stone-800 dark:border-stone-200" : "border-transparent"}
-          `}
-          href={props.href}
-        >
-          {isActive ? <h1 class="inline">{props.children}</h1> : props.children}
-        </a>
+        {isActive ? (
+          <a
+            class="ud-gothic @dark:border-stone-200 @dark:text-stone-200 @dark:hover:bg-stone-700 rounded-md border border-solid border-stone-800 px-2.5 py-1.5 text-xs font-bold hover:bg-stone-300"
+            href={props.href}
+          >
+            <h1 class="inline">{props.children}</h1>
+          </a>
+        ) : (
+          <a
+            class="ud-gothic @dark:text-stone-200 @dark:hover:bg-stone-700 rounded-md border border-solid border-transparent px-2.5 py-1.5 text-xs font-bold hover:bg-stone-300"
+            href={props.href}
+          >
+            {props.children}
+          </a>
+        )}
       </li>
     </>
   );

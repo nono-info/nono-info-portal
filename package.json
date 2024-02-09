@@ -4,19 +4,30 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "dev": "vite",
-    "build": "vite build && vite build --mode client",
-    "preview": "bun run build && wrangler pages dev dist"
+    "dev": "concurrently \"bun css:watch\" \"vite\"",
+    "build": "bun css && vite build --mode client && vite build",
+    "preview": "bun run build && wrangler pages dev dist",
+    "css": "unocss \"src/**/*.tsx\" -o public/static/styles/uno.css",
+    "css:watch": "unocss \"src/**/*.tsx\" -o public/static/styles/uno.css --watch",
+    "prettier": "bunx prettier --write src/ test/ --plugin prettier-plugin-tailwindcss"
   },
   "dependencies": {
-    "hono": "^3.12.6"
+    "@hono/vite-ssg": "^0.0.1",
+    "@unocss/preset-web-fonts": "^0.58.5",
+    "@unocss/reset": "^0.58.5",
+    "hono": "^4.0.0",
+    "unocss": "^0.58.5"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "^4.20231218.0",
-    "@hono/vite-cloudflare-pages": "^0.1.2",
-    "@hono/vite-dev-server": "^0.4.0",
-    "prettier": "^3.2.4",
-    "vite": "^5.0.10",
-    "wrangler": "^3.22.0"
+    "@cloudflare/workers-types": "^4.20240208.0",
+    "@hono/vite-cloudflare-pages": "^0.2.3",
+    "@hono/vite-dev-server": "^0.5.0",
+    "@unocss/cli": "^0.58.5",
+    "bun-types": "latest",
+    "concurrently": "^8.2.2",
+    "prettier": "^3.2.5",
+    "prettier-plugin-tailwindcss": "^0.5.11",
+    "vite": "^5.1.1",
+    "wrangler": "^3.28.0"
   }
 }
