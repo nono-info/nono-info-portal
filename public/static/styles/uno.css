@@ -1136,6 +1136,7 @@
 }
 
 /* layer: default */
+.visible,
 .group:hover .group-hover\:visible{visibility:visible;}
 .invisible{visibility:hidden;}
 .absolute{position:absolute;}
@@ -1145,6 +1146,8 @@
 .ml-\[-0\.5rem\]{margin-left:-0.5rem;}
 .inline{display:inline;}
 .block{display:block;}
+.inline-block{display:inline-block;}
+.hidden{display:none;}
 .h-\[calc\(100dvh-5rem\)\]{height:calc(100dvh - 5rem);}
 .h-fit{height:fit-content;}
 .h-full{height:100%;}
@@ -1156,6 +1159,7 @@
 .w-full{width:100%;}
 .flex{display:flex;}
 .flex-col{flex-direction:column;}
+.resize{resize:both;}
 .place-content-center{place-content:center;}
 .place-content-end{place-content:end;}
 .place-self-end{place-self:end;}
@@ -1178,6 +1182,7 @@
 .pl-40{padding-left:10rem;}
 .pr-4{padding-right:1rem;}
 .pt-6{padding-top:1.5rem;}
+.text-wrap{text-wrap:wrap;}
 .text-5xl{font-size:3rem;line-height:1;}
 .text-lg{font-size:1.125rem;line-height:1.75rem;}
 .text-sm{font-size:0.875rem;line-height:1.25rem;}
@@ -1185,6 +1190,9 @@
 .font-bold{font-weight:700;}
 .font-semibold{font-weight:600;}
 .font-sans{font-family:"M PLUS Rounded 1c",ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";}
+.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
+.outline{outline-style:solid;}
+.ease{transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);}
 @media (prefers-color-scheme: dark){
 .\@dark\:border-stone-200{--un-border-opacity:1;border-color:rgb(231 229 228 / var(--un-border-opacity));}
 .\@dark\:hover\:bg-stone-700:hover{--un-bg-opacity:1;background-color:rgb(68 64 60 / var(--un-bg-opacity));}
