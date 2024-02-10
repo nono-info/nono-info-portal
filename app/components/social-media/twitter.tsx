@@ -10,6 +10,7 @@ export const TwitterTimeline = (props: TwitterTimelineProps) => {
     <div class="h-full w-full overflow-scroll rounded-xl">
       <a
         class="twitter-timeline"
+        aria-label="Twitter Timeline"
         data-lang="ja"
         data-chrome="noheader noborders"
         href={`https://twitter.com/${props.id}?ref_src=twsrc%5Etfw`}
