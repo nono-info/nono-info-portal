@@ -189,25 +189,21 @@ export default jsxRenderer(({ children, title, description, og }) => {
           <>
             <meta property="og:url" content={og.url} />
             <meta property="og:type" content={og.type} />
-            <meta property="og:title" content={title} />
-            <meta property="og:description" content={description} />
-            <meta property="og:site_name" content="ののinfo" />
             <meta property="og:image" content={og.image} />
             <meta name="twitter:card" content={og.twitterCard} />
-            <meta name="twitter:site" content="@NONO_info0827" />
           </>
         ) : (
           <>
             <meta property="og:url" content="https://nonoinfo.com/" />
             <meta property="og:type" content="article" />
-            <meta property="og:title" content={title} />
-            <meta property="og:description" content={description} />
-            <meta property="og:site_name" content="ののinfo" />
             <meta property="og:image" content="" />
             <meta name="twitter:card" content="summary" />
-            <meta name="twitter:site" content="@NONO_info0827" />
           </>
         )}
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:site_name" content="ののinfo" />
+        <meta name="twitter:site" content="@NONO_info0827" />
         <Style />
       </head>
       <body>
