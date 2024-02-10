@@ -22,7 +22,7 @@ export const TwitterTimeline = (props: TwitterTimelineProps) => {
         </div>
       </a>
       <script
-        async
+        defer
         src="https://platform.twitter.com/widgets.js"
         charset="utf-8"
       />
