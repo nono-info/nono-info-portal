@@ -19,7 +19,10 @@ export default createRoute((c) => {
         </EventLink>
       </ul>
     </article>,
-    { title: "イベント - ののinfo" },
+    {
+      title: "イベント - ののinfo",
+      description: "ののinfoの関連イベントの一覧です。",
+    },
   );
 });
 

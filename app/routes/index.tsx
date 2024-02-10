@@ -11,6 +11,10 @@ export default createRoute((c) => {
       </div>
       <script type="module" src="static/scripts/twitter.js" />
     </section>,
-    { title: "ののinfo" },
+    {
+      title: "ののinfo",
+      description:
+        "アイドルマスターシンデレラガールズに登場するアイドル、森久保乃々ちゃんを応援する非公式サイトです。",
+    },
   );
 });
