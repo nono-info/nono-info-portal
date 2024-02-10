@@ -121,7 +121,6 @@ export default jsxRenderer(({ children, title, description, og }) => {
               border: 0 !important;
             }
 
-
             html {
               color: rgb(231 229 228);
               background-color: rgb(28 25 23);

@@ -1,15 +1,27 @@
-import {} from 'hono'
+import {} from "hono";
+
+type Og = {
+  url: string;
+  type: string;
+  image: string;
+  twitterCard: string;
+};
 
 type Head = {
-  title?: string
-}
+  title?: string;
+  description?: string;
+  og?: Og;
+};
 
-declare module 'hono' {
+declare module "hono" {
   interface Env {
-    Variables: {}
-    Bindings: {}
+    Variables: {};
+    Bindings: {};
   }
   interface ContextRenderer {
-    (content: string | Promise<string>, head?: Head): Response | Promise<Response>
+    (
+      content: string | Promise<string>,
+      head?: Head,
+    ): Response | Promise<Response>;
   }
 }
