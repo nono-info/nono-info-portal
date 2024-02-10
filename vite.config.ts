@@ -1,42 +1,20 @@
 import pages from "@hono/vite-cloudflare-pages";
-import devServer from "@hono/vite-dev-server";
-import { getEnv } from "@hono/vite-dev-server/cloudflare-pages";
-import ssg from "@hono/vite-ssg";
+import honox from "honox/vite";
+import client from "honox/vite/client";
 import { defineConfig } from "vite";
 import path from "path";
 
 export default defineConfig(({ mode }) => {
   if (mode === "client") {
     return {
-      build: {
-        rollupOptions: {
-          input: "./src/client.ts",
-          output: {
-            dir: "public",
-            entryFileNames: "static/client.js",
-          },
-        },
-        emptyOutDir: false,
-      },
+      plugins: [client()],
     };
   } else {
     return {
-      plugins: [
-        pages(),
-        ssg(),
-        devServer({
-          entry: "src/index.tsx",
-          env: getEnv({
-            bindings: {
-              NAME: "Hono",
-            },
-            kvNamespaces: ["MY_KV"],
-          }),
-        }),
-      ],
+      plugins: [honox(), pages()],
       resolve: {
         alias: {
-          "@": path.resolve(__dirname, "./src"),
+          "@": path.resolve(__dirname, "./app"),
         },
       },
     };

@@ -12,11 +12,6 @@ a:hover {
   cursor: pointer;
 }
 
-.ud-gothic {
-  font-family: "BIZ UDGothic", sans-serif;
-  font-style: normal;
-}
-
 .skeleton {
   width: 100%;
   height: 100%;
@@ -33,7 +28,12 @@ a:hover {
 
   @media (prefers-color-scheme: dark) {
     background-color: rgb(31 28 26);
-    background: linear-gradient(102deg, rgb(31 28 26) 25%, rgb(50 47 45) 37%, rgb(31 28 26) 63%);
+    background: linear-gradient(
+      102deg,
+      rgb(31 28 26) 25%,
+      rgb(50 47 45) 37%,
+      rgb(31 28 26) 63%
+    );
     background-size: 400% 100%;
   }
 }

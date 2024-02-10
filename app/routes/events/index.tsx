@@ -1,22 +1,10 @@
-import { Hono } from "hono";
+import { createRoute } from "honox/factory";
 import { Child } from "hono/jsx";
-import Mbf15 from "./mbf-15";
 
-const app = new Hono();
-
-app.get("/", (c) =>
-  c.render(<Events page="events" />, { title: "イベント - ののinfo" }),
-);
-app.get("/mbf-15", (c) =>
-  c.render(<Mbf15 />, {
-    title: "森久保乃々プチオンリー | MyBestFriends 15 - ののinfo",
-  }),
-);
-
-const Events = () => {
-  return (
+export default createRoute((c) => {
+  return c.render(
     <article>
-      <h2 class="zen-antique-soft mb-2 text-4xl">関連イベント</h2>
+      <h2 class="mb-2 font-sans text-5xl font-bold">関連イベント</h2>
       <ul class="my-4 flex flex-col gap-2">
         <EventLink href="https://otoginomori.net/">
           <img
@@ -30,9 +18,10 @@ const Events = () => {
           森久保乃々プチオンリー at MyBestFriends 15
         </EventLink>
       </ul>
-    </article>
+    </article>,
+    { title: "イベント - ののinfo" },
   );
-};
+});
 
 type EventLinkProps = {
   href: string;
@@ -43,7 +32,7 @@ const EventLink = (props: EventLinkProps) => {
   return (
     <li>
       <a
-        class="kiwi-maru @dark:hover:bg-stone-700 ml-[-0.5rem] block h-fit w-fit rounded-md p-2 text-lg font-semibold hover:bg-stone-300"
+        class="@dark:hover:bg-stone-700 ml-[-0.5rem] block h-fit w-fit rounded-xl p-2 font-sans text-lg font-semibold hover:bg-stone-300"
         href={props.href}
         target={
           props.href.slice(0, 4) === "http" || props.href.slice(0, 2) === "//"
@@ -56,5 +45,3 @@ const EventLink = (props: EventLinkProps) => {
     </li>
   );
 };
-
-export default app;

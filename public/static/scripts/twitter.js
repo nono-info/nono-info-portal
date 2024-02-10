@@ -1,17 +1,16 @@
-// --- Twitter widget ---
 const timeline = document.querySelector(".twitter-timeline");
 const mediaQueryList = window.matchMedia("(prefers-color-scheme: dark)");
 
 const isDark = mediaQueryList.matches;
 if (timeline) timeline.setAttribute("data-theme", isDark ? "dark" : "light");
 
-function themeChanged(e: MediaQueryListEvent) {
+function themeChanged(e) {
   let twitterWidget = document.getElementById("twitter-widget-0");
   if (twitterWidget) {
     let src = twitterWidget.getAttribute("src");
 
     if (src) {
-      var newSrc: string;
+      var newSrc;
 
       if (e.matches) {
         newSrc = src.replace("theme=light", "theme=dark");
@@ -25,4 +24,3 @@ function themeChanged(e: MediaQueryListEvent) {
 }
 
 mediaQueryList.addEventListener("change", themeChanged);
-// --- End Twitter widget ---

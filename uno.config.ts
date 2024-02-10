@@ -1,14 +1,14 @@
-import { defineConfig, presetAttributify, presetWind } from "unocss";
+import { defineConfig, presetAttributify, presetUno } from "unocss";
 import presetWebFonts from "@unocss/preset-web-fonts";
 
 export default defineConfig({
   presets: [
     presetAttributify(),
-    presetWind(),
+    presetUno(),
     presetWebFonts({
       provider: "google",
       fonts: {
-        lato: "Lato",
+        sans: "M PLUS Rounded 1c",
       },
     }),
   ],
