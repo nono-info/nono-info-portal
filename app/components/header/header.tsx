@@ -41,14 +41,14 @@ const HeaderLink = (props: HeaderLinkProps) => {
       <li>
         {isActive ? (
           <a
-            class="ud-gothic @dark:border-stone-200 @dark:text-stone-200 @dark:hover:bg-stone-700 rounded-md border border-solid border-stone-800 px-2.5 py-1.5 text-xs font-bold hover:bg-stone-300"
+            class="@dark:border-stone-200 @dark:text-stone-200 @dark:hover:bg-stone-700 rounded-md border border-solid border-stone-800 px-2.5 py-1.5 font-sans text-xs font-bold hover:bg-stone-300"
             href={props.href}
           >
             <h1 class="inline">{props.children}</h1>
           </a>
         ) : (
           <a
-            class="ud-gothic @dark:text-stone-200 @dark:hover:bg-stone-700 rounded-md border border-solid border-transparent px-2.5 py-1.5 text-xs font-bold hover:bg-stone-300"
+            class="@dark:text-stone-200 @dark:hover:bg-stone-700 rounded-md border border-solid border-transparent px-2.5 py-1.5 font-sans text-xs font-bold hover:bg-stone-300"
             href={props.href}
           >
             {props.children}

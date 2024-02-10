@@ -2,16 +2,14 @@
   "compilerOptions": {
     "target": "ESNext",
     "module": "ESNext",
-    "moduleResolution": "node",
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "Bundler",
     "strict": true,
-    "lib": ["dom", "ESNext"],
+    "lib": ["ESNext"],
     "types": ["@cloudflare/workers-types", "vite/client", "bun-types"],
     "jsx": "react-jsx",
     "jsxImportSource": "hono/jsx",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./app/*"]
     },
     "resolveJsonModule": true,
     "skipLibCheck": true

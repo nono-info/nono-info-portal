@@ -1,21 +1,20 @@
 {
-  "name": "nono-info-portal",
-  "version": "0.0.1",
+  "name": "basic",
   "type": "module",
   "private": true,
   "scripts": {
     "dev": "concurrently \"bun css:watch\" \"vite\"",
     "build": "bun css && vite build --mode client && vite build",
-    "preview": "bun run build && wrangler pages dev dist",
-    "css": "unocss \"src/**/*.tsx\" -o public/static/styles/uno.css",
-    "css:watch": "unocss \"src/**/*.tsx\" -o public/static/styles/uno.css --watch",
-    "prettier": "bunx prettier --write src/ test/ --plugin prettier-plugin-tailwindcss"
+    "preview": "bun run build && wrangler pages dev ./dist",
+    "css": "unocss \"app/**/*.tsx\" -o public/static/styles/uno.css",
+    "css:watch": "unocss \"app/**/*.tsx\" -o public/static/styles/uno.css --watch",
+    "prettier": "bunx prettier --write app/ test/ --plugin prettier-plugin-tailwindcss"
   },
   "dependencies": {
-    "@hono/vite-ssg": "^0.0.1",
     "@unocss/preset-web-fonts": "^0.58.5",
     "@unocss/reset": "^0.58.5",
     "hono": "^4.0.0",
+    "honox": "^0.1.0",
     "unocss": "^0.58.5"
   },
   "devDependencies": {
@@ -28,6 +27,6 @@
     "prettier": "^3.2.5",
     "prettier-plugin-tailwindcss": "^0.5.11",
     "vite": "^5.1.1",
-    "wrangler": "^3.28.0"
+    "wrangler": "^3.28.1"
   }
 }

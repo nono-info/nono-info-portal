@@ -3,7 +3,7 @@ dist
 .wrangler
 .dev.vars
 .env
-.DS_Store
+.hono
 wrangler.toml
 bun.lockb
-.hono
+.DS_Store
