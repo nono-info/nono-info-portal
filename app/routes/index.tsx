@@ -15,6 +15,12 @@ export default createRoute((c) => {
       title: "ののinfo",
       description:
         "アイドルマスターシンデレラガールズに登場するアイドル、森久保乃々ちゃんを応援する非公式サイトです。",
+      og: {
+        url: "https://nonoinfo.com/",
+        type: "website",
+        image: "https://nonoinfo.com/static/image/events/otoginomori.jpg",
+        twitterCard: "summary",
+      },
     },
   );
 });
